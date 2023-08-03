@@ -10,3 +10,6 @@ As of 03/08/2023 what remained as blueprint project for my first attempts at con
 I also believe that I will have to build my own solution of a Character Controller Component to allow the kind of interactions with the environment that I want.
 
 Following the guide [here](https://docs.unrealengine.com/5.1/en-US/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine/) I set up visual studio 2022 to accomodate for all the dependencies required, and after a restart to resolve a certain "Live Coding" incident, all seems to work as expected.
+
+I have also come to realize the default gitignore provided by Github if far from enough to contain this beast (and as I included the project within a folder, it was in the wrong directory anyways), so I used [this example](https://github.com/MOZGIII/ue5-gitignore/tree/master) instead, I have also decided to remove the folder that at first was meant to separate git related files from ue5.
+
