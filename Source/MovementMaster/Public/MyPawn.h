@@ -6,6 +6,11 @@
 #include "GameFramework/Pawn.h"
 #include "MyPawn.generated.h"
 
+class UEnhancedInputComponent;
+class UInputMappingContext;
+class UInputAction;
+struct FInputActionValue;
+
 UCLASS()
 class MOVEMENTMASTER_API AMyPawn : public APawn
 {
@@ -18,6 +23,20 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	// Expose a mapping context as a property in your header file...
+	UPROPERTY(EditAnywhere, Category = "Input")
+		TSoftObjectPtr<UInputMappingContext> InputMapping;
+
+	UPROPERTY(EditAnywhere, Category = "Input")
+		int Priority;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+		UInputAction* MoveAction;
+
+	void Move(const FInputActionValue& Value);
+
+	void MoveCamera(const FInputActionValue& Value);
 
 public:	
 	// Called every frame
